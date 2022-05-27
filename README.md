@@ -62,7 +62,7 @@ expo init my-app
 <br>
 
 ```javascript
-expo init my-app
+expo login
 ```
 
 <br>

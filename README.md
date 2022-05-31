@@ -33,10 +33,6 @@ npm i -g expo-cli
 
 <br>
 
----
-
-<br>
-
 ## 프로젝트 생성
 
 <br>
@@ -44,10 +40,6 @@ npm i -g expo-cli
 ```
 expo init my-app
 ```
-
-<br>
-
----
 
 <br>
 
@@ -67,10 +59,6 @@ expo login
 
 <br>
 
----
-
-<br>
-
 ## `<Text>`
 
 <br>
@@ -82,10 +70,6 @@ expo login
 ```javascript
 <Text>짱이다!</Text>
 ```
-
-<br>
-
----
 
 <br>
 
@@ -122,3 +106,44 @@ const styles = StyleSheet.create({
   },
 });
 ```
+
+<br>
+
+## Status-bar
+
+<br>
+
+- 시계, 배터리, wifi
+- 일부 컴포넌트는 화면에 표시되지 않고, ios 및 안드로이드 운영 체제와 소통하기 위한 것
+- exop-status-bar의 statusBar와 react-native statusbar의 차이점 => 거의 같지만 props, method... 의 차이가 있다
+- native
+
+![native](https://user-images.githubusercontent.com/92927950/171191124-b918d80d-c75f-4b6d-9065-6a002f879a75.png)
+
+- expo
+
+![expo](https://user-images.githubusercontent.com/92927950/171191150-dfc52235-193b-45a1-a892-85182572f27b.png)
+
+<br>
+
+## 왜 status-bar가 native에도 있고 expo에도 있나?!
+
+react-native 3.0버전까지 asyncstorage가 존재했는데, (웹으로 따지면 localstorage 같은 개념) 현재(6.8)는 없어졌다
+
+⇒ 개발자들에게 최대한 많은 api와 컴포넌트를 제공하려고 했으나, 기능에 버그가 많고 유지관리, 업데이트 등에 어려움을 느꼈기 때문이다
+
+⇒ 정말 중요한, 필수적인 기능만 남기려고 노력하는 중이며, 커뮤니티 패키지를 사용하라고 한다
+
+<br>
+
+![image](https://user-images.githubusercontent.com/92927950/171192710-5ed30005-d9fd-4523-ba16-313a1675d34b.png)
+
+<br>
+
+커뮤니티 패키지를 누르면 React Native Directory로 이동하는데, third-party 패키지와 api가 있다 
+
+- 커뮤니티가 제작한 package는 많은 옵션이 있다는 장점이 있지만, 만든 사람이 바쁘면 업데이트, 버그 등이 고쳐지는데 오랜 시간이 걸린다는 단점이 있다
+- expo는 이를 우려했고, 자체적으로 packages와 apis를 만들기 시작했다 ⇒ <b>expo sdk</b>라고 부른다
+
+<br>
+

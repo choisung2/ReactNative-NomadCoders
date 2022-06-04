@@ -8,10 +8,21 @@ import {
   Text,
   View,
 } from "react-native";
+import { Fontisto } from "@expo/vector-icons";
 
 const { width: windowWidth } = Dimensions.get("window");
 
 const API_KEY = "b2753da884a51d56a5b4c1d37bad51f6"; //free-api
+
+const icons = {
+  Clouds: "cloudy",
+  Clear: "day-sunny",
+  Rain: "rains",
+  Atmosphere: "cloudy-gusts",
+  Snow: "snow",
+  Drizzle: "rain",
+  Thunderstorm: "lightning",
+};
 
 export default function App() {
   const [city, setCity] = useState("Loading...");
@@ -59,9 +70,9 @@ export default function App() {
         style={styles.weather}
       >
         {days.length === 0 ? (
-          <View style={styles.day}>
+          <View style={{ ...styles.day, alignItems: "center" }}>
             <ActivityIndicator
-              color="white"
+              color="black"
               size="large"
               style={{ marginTop: 10 }}
             />
@@ -69,18 +80,29 @@ export default function App() {
         ) : (
           days.map((day, i) => (
             <View key={i} style={styles.day}>
-              <Text style={styles.temp}>
-                {parseFloat(day.temp.day).toFixed(1)}
-              </Text>
+              <View
+                style={{
+                  // flexDirection: "colum",
+                  alignItems: "center",
+                  width: "100%",
+                  justifyContent: "center",
+                }}
+              >
+                <Fontisto
+                  name={icons[day.weather[0].main]}
+                  size={70}
+                  color="black"
+                />
+                <Text style={styles.temp}>
+                  {parseFloat(day.temp.day).toFixed(1)}
+                </Text>
+              </View>
+
               <Text style={styles.des}>{day.weather[0].main}</Text>
               <Text style={styles.tinyText}>{day.weather[0].description}</Text>
             </View>
           ))
         )}
-        {/* <View style={styles.day}>
-          <Text style={styles.temp}>27</Text>
-          <Text style={styles.des}>Sunny</Text>
-        </View> */}
       </ScrollView>
     </View>
   );
@@ -89,7 +111,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "tomato",
   },
   city: {
     flex: 1.2,
@@ -100,17 +121,16 @@ const styles = StyleSheet.create({
     fontSize: 68,
     fontWeight: "500",
   },
-  weather: {},
   day: {
     width: windowWidth,
     alignItems: "center",
   },
   temp: {
-    marginTop: 50,
-    fontSize: 178,
+    marginTop: 30,
+    fontSize: 120,
   },
   des: {
-    marginTop: -30,
+    marginTop: -15,
     fontSize: 60,
   },
   tinyText: {

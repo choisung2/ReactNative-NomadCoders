@@ -147,3 +147,34 @@ react-native 3.0버전까지 asyncstorage가 존재했는데, (웹으로 따지�
 
 <br>
 
+## 레이아웃 시스템
+
+### flexbox
+- 웹에서는 display:flex 를 해야만 하는데, flex: 1 로 사용가능하다
+- 기본적으로 flex container를 가진다
+- flexdirection의 기본 값은 column 이다. row로 변경하기 위해서는 명시해야한다
+
+<br>
+
+```html
+<View style={{ flexDirection: "row" }}>
+  <View style={{ backgroundColor: "tomato" }}></View>
+  <View style={{ backgroundColor: "teal" }}></View>
+  <View style={{ backgroundColor: "orange" }}></View>
+</View>
+```
+
+<br>
+
+- 반응형 디자인을 생각해, 너비와 높이에 기반해 레이아웃을 만들지 않는다 => 수 많은 스크린에서 동일한 사이즈를 만들어야 하기 때문에 비율만 생각하자!
+- 동일한 부모 아래 있는 자식들은 비율로 크기를 설정할 수 있다(부모 크기를 지정해야한다)
+
+<br>
+
+```html
+<View style={{ flex: 1 }}>
+  <View style={{ flex: 1, backgroundColor: "tomato" }}></View>
+  <View style={{ flex: 1, backgroundColor: "teal" }}></View>
+  <View style={{ flex: 1, backgroundColor: "orange" }}></View>
+</View>
+```

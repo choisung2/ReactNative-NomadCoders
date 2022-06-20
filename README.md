@@ -213,3 +213,4 @@ console.log(windowWidth);
 ## ActivityIndicator(api)
 
 - 로딩 중을 나타냄
+<img src="https://user-images.githubusercontent.com/92927950/174553344-f7cedb0a-09db-4771-829b-f67ebaf4966e.png" width="30%" height="30%">

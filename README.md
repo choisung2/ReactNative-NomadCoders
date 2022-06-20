@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
 
 <br>
 
-## Status-bar
+## Status-bar(api)
 
 <br>
 
@@ -178,3 +178,38 @@ react-native 3.0버전까지 asyncstorage가 존재했는데, (웹으로 따지�
   <View style={{ flex: 1, backgroundColor: "orange" }}></View>
 </View>
 ```
+
+<br>
+
+## ScrollView(api)
+
+- 스크롤 기능
+- props를 잘 활용해야 한다
+
+<br>
+
+## Dimensions(api)
+
+- 스크린의 크기를 알 수 있다
+
+```javascript
+import { Dimensions, ScrollView, StyleSheet, Text, View } from "react-native";
+
+const windowWidth = Dimensions.get("window").width;
+
+console.log(windowWidth);
+```
+
+<br>
+
+## Location(api)
+
+- 사용자의 위치와 관련된 exop api
+- reverseGeocodeAsync: 위도와 경도를 주소로 변환해줌
+- GeocodeAsync: 주소를 위도, 경도 숫자로 변환해줌
+
+<br>
+
+## ActivityIndicator(api)
+
+- 로딩 중을 나타냄

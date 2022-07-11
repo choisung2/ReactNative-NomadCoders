@@ -2,11 +2,17 @@
 
 React Native는 브라우저가 없고 Bridge가 존재한다
 
+React Native 코드를 만들면 bridge를 통해 알아서 번역해준다
+
 <br>
 
 ![리액트 네이티브 작동 원리](https://user-images.githubusercontent.com/92927950/170433291-b5f97139-5fee-4236-8bc9-e0146a9e5729.png "https://nomadcoders.co/react-native-for-beginners/lobby")
 
+(4,5 번만 사용)
+
 event 발생 => 데이터(메시지) 생성 => Bridge를 통해 JavaScript에 메시지 전달 ⇒ 코드 실행 ⇒ 다시 Bridge를 통해 Native로 잔달
+
+자바스크립트는 메시지를 주고 받기 위해 사용하는 레이어라고 생각하면 편하다!
 
 <br>
 
